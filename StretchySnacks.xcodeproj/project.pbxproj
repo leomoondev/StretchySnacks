@@ -302,6 +302,7 @@
 				DAA860521E7B0A2D0024AE7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
