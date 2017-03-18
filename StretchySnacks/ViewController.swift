@@ -13,6 +13,14 @@ class ViewController: UIViewController {
     var navBar: UINavigationBar = UINavigationBar()
 
     let plusButton = UIButton()
+    
+    var stackView : UIStackView?
+    var imageView1 : UIImageView?
+    var imageView2 : UIImageView?
+    var imageView3 : UIImageView?
+    var imageView4 : UIImageView?
+    var imageView5 : UIImageView?
+
 
     var wasButtonClicked = false
     
@@ -53,63 +61,66 @@ class ViewController: UIViewController {
         
 //        self.plusButton.layer.anchorPoint = CGPoint(x: self.plusButton.center.x, y: self.plusButton.center.y)
 
-        let stackView   = UIStackView()
-        let imageView1 = UIImageView()
-        let imageView2 = UIImageView()
-        let imageView3 = UIImageView()
-        let imageView4 = UIImageView()
-        let imageView5 = UIImageView()
+        if (stackView == nil) {
+            stackView   = UIStackView()
 
-        if wasButtonClicked
-        {
+        }
+        
+
+        if wasButtonClicked {
             
+            imageView1 = UIImageView()
+            imageView2 = UIImageView()
+            imageView3 = UIImageView()
+            imageView4 = UIImageView()
+            imageView5 = UIImageView()
 
             
             //Stack View
-            stackView.axis  = UILayoutConstraintAxis.horizontal
-            stackView.distribution  = UIStackViewDistribution.equalSpacing
-            stackView.alignment = UIStackViewAlignment.leading
-            stackView.spacing   = 0
+            self.stackView?.axis  = UILayoutConstraintAxis.horizontal
+            self.stackView?.distribution  = UIStackViewDistribution.equalSpacing
+            self.stackView?.alignment = UIStackViewAlignment.leading
+            self.stackView?.spacing   = 0
             
-            imageView1.backgroundColor = UIColor.blue
-            imageView1.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
-            imageView1.widthAnchor.constraint(equalToConstant: self.view.frame.width/5).isActive = true
-            imageView1.image = UIImage(named: "oreos")
+            self.imageView1?.backgroundColor = UIColor.blue
+            self.imageView1?.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+            self.imageView1?.widthAnchor.constraint(equalToConstant: self.view.frame.width/5).isActive = true
+            self.imageView1?.image = UIImage(named: "oreos")
             
-            imageView2.backgroundColor = UIColor.blue
-            imageView2.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
-            imageView2.widthAnchor.constraint(equalToConstant: self.view.frame.width/5).isActive = true
-            imageView2.image = UIImage(named: "pizza_pockets")
+            self.imageView2?.backgroundColor = UIColor.blue
+            self.imageView2?.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+            self.imageView2?.widthAnchor.constraint(equalToConstant: self.view.frame.width/5).isActive = true
+            self.imageView2?.image = UIImage(named: "pizza_pockets")
             
-            imageView3.backgroundColor = UIColor.blue
-            imageView3.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
-            imageView3.widthAnchor.constraint(equalToConstant: self.view.frame.width/5).isActive = true
-            imageView3.image = UIImage(named: "pop_tarts")
+            self.imageView3?.backgroundColor = UIColor.blue
+            self.imageView3?.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+            self.imageView3?.widthAnchor.constraint(equalToConstant: self.view.frame.width/5).isActive = true
+            self.imageView3?.image = UIImage(named: "pop_tarts")
             
-            imageView4.backgroundColor = UIColor.blue
-            imageView4.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
-            imageView4.widthAnchor.constraint(equalToConstant: self.view.frame.width/5).isActive = true
-            imageView4.image = UIImage(named: "popsicle")
+            self.imageView4?.backgroundColor = UIColor.blue
+            self.imageView4?.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+            self.imageView4?.widthAnchor.constraint(equalToConstant: self.view.frame.width/5).isActive = true
+            self.imageView4?.image = UIImage(named: "popsicle")
             
-            imageView5.backgroundColor = UIColor.blue
-            imageView5.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
-            imageView5.widthAnchor.constraint(equalToConstant: self.view.frame.width/5).isActive = true
-            imageView5.image = UIImage(named: "ramen")
+            self.imageView5?.backgroundColor = UIColor.blue
+            self.imageView5?.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+            self.imageView5?.widthAnchor.constraint(equalToConstant: self.view.frame.width/5).isActive = true
+            self.imageView5?.image = UIImage(named: "ramen")
             
-            stackView.addArrangedSubview(imageView1)
-            stackView.addArrangedSubview(imageView2)
-            stackView.addArrangedSubview(imageView3)
-            stackView.addArrangedSubview(imageView4)
-            stackView.addArrangedSubview(imageView5)
+            self.stackView?.addArrangedSubview(self.imageView1!)
+            self.stackView?.addArrangedSubview(self.imageView2!)
+            self.stackView?.addArrangedSubview(self.imageView3!)
+            self.stackView?.addArrangedSubview(self.imageView4!)
+            self.stackView?.addArrangedSubview(self.imageView5!)
 
             
-            stackView.translatesAutoresizingMaskIntoConstraints = false;
+            self.stackView!.translatesAutoresizingMaskIntoConstraints = false;
             
-            navigationController?.navigationBar.addSubview(stackView)
+            navigationController?.navigationBar.addSubview(self.stackView!)
             
             //Constraints
-            stackView.leadingAnchor.constraint(equalTo: (navigationController?.navigationBar.leadingAnchor)!).isActive = true
-            stackView.bottomAnchor.constraint(equalTo: (navigationController?.navigationBar.bottomAnchor)!).isActive = true
+            self.stackView?.leadingAnchor.constraint(equalTo: (navigationController?.navigationBar.leadingAnchor)!).isActive = true
+            self.stackView?.bottomAnchor.constraint(equalTo: (navigationController?.navigationBar.bottomAnchor)!).isActive = true
             //stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
             //stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
 
@@ -119,7 +130,7 @@ class ViewController: UIViewController {
                 //self.plusButton.layer.anchorPoint = CGPoint(x: self.plusButton.center.x, y: self.plusButton.center.y)
                 self.plusButton.transform = self.plusButton.transform.rotated(
                     by: CGFloat.pi / 4)
-
+                
             }, completion: nil)
             
             UIView.animate(withDuration: 0.1, animations: { () -> Void in
@@ -130,19 +141,36 @@ class ViewController: UIViewController {
                 
             })
         }
+            
         else {
+
+            
+            //stackView.removeArrangedSubview(imageView1)
+//            UIView.animate(withDuration:3.0){
+//                
+//            //    stackView.isHidden = true //or false
+                for view in (self.stackView?.subviews)! {
+                    
+                    view.alpha = 0
+                    
+                }
+//
+//            }
+
+//            
+//            let view = stackView.subviews
             
             //stackView.removeArrangedSubview((navigationController?.navigationBar)!)
             //navigationController?.navigationBar.removeFromSuperview()
             
-            stackView.removeArrangedSubview(imageView1)
+            //stackView.removeArrangedSubview(imageView1)
             //stackView.addArrangedSubview(imageView2)
             //stackView.addArrangedSubview(imageView3)
             //stackView.addArrangedSubview(imageView4)
             //stackView.addArrangedSubview(imageView5)
             
             
-            stackView.translatesAutoresizingMaskIntoConstraints = false;
+            //stackView.translatesAutoresizingMaskIntoConstraints = false;
             
             //navigationController?.navigationBar.willRemoveSubview(stackView)
             
@@ -157,12 +185,9 @@ class ViewController: UIViewController {
                 let height: CGFloat = 64 //whatever height you want
                 let bounds = self.navigationController!.navigationBar.bounds
                 self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: height)
-                
             })
         }
     }
-    
-    
 }
 
 
